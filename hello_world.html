@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+	
+	ul {
+		list-style-type: none;
+		padding: 0px;
+		margin: 0px;
+		width: 100%;
+		height: 40px;	
+		 background-color: white;	
+		 display: block;
+		  position: fixed;
+		 
+	}
+
+
+	li {
+		display: inline-block;
+		margin:10px;
+		font-size: 25px;
+	    float:left;
+		
+	}
+
+	li a {
+	display: block;	
+	text-decoration: none;
+		}
+
+	
+	li a:hover {	
+	background-color: #58595B;
+	color: white;
+    } 
+
+.open-button {
+		margin-left: 50px;
+	border-width: 0px;
+
+	 background-color: #555;
+  color: white;
+  
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  }
+
+
+  .form-popup {
+  display: none;
+  position: fixed;
+  background-color: white;
+ 
+  width: 50%;
+  border: 3px solid #f1f1f1;
+
+
+
+}
+ 
+#ABC {
+    color: #1381BD;
+    font-weight: bold;
+}
+
+
+.btn2 {
+	border-radius: 5px;
+	border-width: 0px;
+	margin-right: 40px;
+}
+
+
+	
+.head
+{ color: #1381BD;
+	font-weight: bold; 
+	margin: 0px;
+font-size: 30px;
+display: inline-block; 
+
+}
+
+
+.admin {
+	color:blue;
+	font-size: 25px;
+	display: inline-block;
+	width: 150px;
+}
+
+table {
+  border-collapse: collapse;
+}
+table, td, th {
+  border: 1px solid #ddd;
+  padding: 13px;
+}
+th {
+    color: #FC633D;
+}
+
+tr:nth-child(odd) {background-color: #ffffff;}
+
+</style>
+
+<body style="background-color: #F9F8F6;">
+	<ul>
+   <li><a class="head">Mera Mohalla </a></li>
+	<li><a href="#Home">Home</a></li>
+	<li><a href="#Claims">Claims</a></li>
+    <li><a href="#Flags">Flags</a></li>
+    <li><a href="#Statistics">Statistics</a></li>
+    <li class="admin" style="float:right;"><a href="admin.asp">Nikhil Admin</a></li>
+     </ul>
+    
+
+    
+
+    
+<br>
+<br>
+<br>
+<br><br>
+<br>
+		<p><b>Home</b>
+		<button type="button" class="btn2" style="background-color: #1381BD;color: white;width: 150px;height: 30px; float: right;">Add Locality</button>
+		<button type="button" class="btn2" style="background-color: #1381BD;color: white;width: 150px;height: 30px;float: right;">Add Category</button>
+		<button type="button" class="btn2" style="background-color: #1381BD;color: white;width: 150px;height: 30px;float: right;">Add Vendor</button>
+    </p>
+    <hr style=" background-color-color: #ffffff ;">
+    
+
+<p style="width: 100%">Viewing records since beginning<button class="open-button" type="button" onclick="openForm()" style="background-color: #1381BD;color: white;width: 150px;height: 30px">Apply Filters</button></p>
+<br>
+
+
+
+
+
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1 style="display: block; width: 100%; box-shadow: 1px black">Apply Filters</h1>
+    <hr>
+    
+    <h4>View data between dates</h4>
+    <input type="dates" name="" value="" placeholder="From" class="dates"><i style="color: #138180" class="fa fa-calender"></i>
+<input type="dates" name="" value="" placeholder="to" class="dates"><i style="color: #138180" class="fa fa-calender"></i>
+    <hr>
+    <h4>Choose Columns to view</h4>
+     <input type="checkbox" name="1"> No. of vendors<br>
+      <input type="checkbox" name="2"> No. of members<br>
+      <input type="checkbox" name="3"> No. of Events<br>
+      <input type="checkbox" name="4"> No. of NO.of Reviews<br>
+      <input type="checkbox" name="5"> No. of discussions<br>
+      <input type="checkbox" name="6"> Weekly Active Users<br>
+      <input type="checkbox" name="7"> Daily active users<br>
+      <hr>
+
+  
+
+
+
+    <button type="submit" style="background-color: #1381BD;color: white;width: 150px;height: 30px; border-radius:5px;" class="btn">Apply filters</button>
+
+    <button type="button" style="background-color: #1381BD;color: white;width: 150px;height: 30px;border-radius: 5px;" class="btn cancel" onclick="cancelForm()">Cancel</button>
+  </form>
+</div>
+
+
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function cancelForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+
+<table style="width: 100%;">
+	<tr>
+		<th>Locality name </th>
+		<th>No. of vendors</th>
+		<th>No. of members</th>
+		<th>No. of Events</th>
+		<th>No. of Questions</th>
+		<th>No. of Stores</th>
+		<th>No.of Reviews</th>
+		<th>No. of Flags</th>
+	 </tr>
+
+     <tr>
+	<td id="ABC">ABC</td>
+	<td>02</td>
+	<td>28</td>
+	<td>28</td>
+	<td>28</td>
+	<td>28</td>
+	<td>28</td>
+	<td>28</td>
+     </tr>
+
+     <tr>
+     	<td id="ABC">Bose Nagar</td>
+     	<td>12</td>
+     	<td>47</td>
+     	<td>47</td>
+     	<td>47</td>
+     	<td>47</td>
+     	<td>47</td>
+     	<td>47</td>
+     </tr>
+	
+	<tr>
+     	<td id="ABC">ABC</td>
+     	<td>04</td>
+     	<td>74</td>
+     	<td>74</td>
+     	<td>74</td>
+     	<td>74</td>
+     	<td>74</td>
+     	<td>74</td>
+     </tr>
+	
+	<tr>
+     	<td id="ABC">Bose Nagar</td>
+     	<td>08</td>
+     	<td>52</td>
+     	<td>52</td>
+     	<td>52</td>
+     	<td>52</td>
+     	<td>52</td>
+     	<td>52</td>
+     </tr>
+
+     <tr>
+     	<td id="ABC">ABC</td>
+     	<td>10</td>
+     	<td>29</td>
+     	<td>29</td>
+     	<td>29</td>
+     	<td>29</td>
+     	<td>29</td>
+     	<td>29</td>
+     </tr>
+
+     <tr>
+     	<td  id="ABC">Bose Nagar</td>
+     	<td>12</td>
+     	<td>87</td>
+     	<td>87</td>
+     	<td>87</td>
+     	<td>87</td>
+     	<td>87</td>
+     	<td>87</td>
+     </tr>
+
+     <tr>
+     	<td  id="ABC">ABC</td>
+     	<td>10</td>
+     	<td>29</td>
+     	<td>29</td>
+     	<td>29</td>
+     	<td>29</td>
+     	<td>29</td>
+     	<td>29</td>
+     </tr>
+</table>
+	</body>
+	</html>
